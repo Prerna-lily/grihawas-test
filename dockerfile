@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y apache2 libapache2-mod-php php php-cli php-curl php-mbstring supervisor && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Configure Apache to listen on ports 80 and 442
+# Configure Apache to listen on ports 80 and 443
 RUN echo "Listen 80\nListen 443" > /etc/apache2/ports.conf
 
 # Create a basic Apache site configuration to serve PHP from the backend folder
@@ -36,7 +36,7 @@ RUN a2enmod ssl
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy and install frontend dependencies (assumes package.json is in the client folder)
+# Copy and install frontend dependencies directly from the root
 COPY package*.json ./
 RUN npm install
 
@@ -51,8 +51,9 @@ COPY . .
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Expose the ports:
-# 3000 for your frontend (npm start), 80 and 442 for Apache (serving PHP)
+# - 3000 for your frontend (npm start)
+# - 80 and 443 for Apache (serving PHP)
 EXPOSE 3000 80 443
 
-# Start Supervisor to run all three services concurrently
+# Start Supervisor to run all services concurrently
 CMD ["/usr/bin/supervisord", "-n"]
