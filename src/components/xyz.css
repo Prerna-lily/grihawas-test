@@ -1,0 +1,48 @@
+/* General styling for the download section */
+.download-section {
+    background-color: #4a3c2f;
+    padding: 20px;
+    border: 2px solid #fff;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.download-title {
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.download-btn {
+    background-color: #fff;
+    color: #8b0000;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    .download-btn {
+        width: 100%; /* Make buttons full width on small screens */
+        font-size: 14px;
+        padding: 10px;
+    }
+}

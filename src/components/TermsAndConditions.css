@@ -1,0 +1,64 @@
+.terms-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px; /* Overall smaller font size */
+}
+
+.terms-content {
+    height: 300px; /* Fixed height for scrolling */
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    font-size: 12px; /* Even smaller font size for the content */
+}
+
+.terms-content ol {
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin-bottom: 5px;
+}
+
+.checkbox-container {
+    margin-bottom: 20px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.button-container button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; /* Space below the logo */
+}
+
+.logo {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    cursor: pointer; /* Change cursor to a pointer on hover */
+}
